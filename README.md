@@ -1,6 +1,6 @@
 # rsyncer
 
-a simple way sync a file up and anotherone down.
+a simple way to sync a file up and anotherone down.
 
 - uses rsnyc over ssh 
 - ssh key auth is recommended
