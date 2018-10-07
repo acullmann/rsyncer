@@ -28,6 +28,10 @@ CleanUp() {
 }
 trap CleanUp EXIT INT TERM SIGINT SIGTERM SIGTSTP
 
+print_date() {
+	date +'%Y-%m-%d %H:%M:%S'
+}
+
 
 rsync_up() {
 	echo -n "uploading   ... "
@@ -35,10 +39,10 @@ rsync_up() {
 	if [ $? -eq 0 ]   
 	then
 	    echo -n " done at "
-	    date +'%Y-%M-%d %H:%m:%S'
+	    print_date
 	else
 	    echo -n -e "\e[31mfailed\e[0m at "
-	    date +'%Y-%M-%d %H:%m:%S'
+	    print_date
 	    # insert aditional error handling here
 	fi
 }
@@ -49,10 +53,10 @@ rsync_down() {
 	if [ $? -eq 0 ]
 	then
 	    echo -n " done at "
-	    date +'%Y-%M-%d %H:%m:%S'
+	    print_date
 	else
 	    echo -n -e "\e[31mfailed\e[0m at "
-	    date +'%Y-%M-%d %H:%m:%S'
+	    print_date
 	    # insert aditional error handling here
 	fi
 }
